@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Pup Filthy #---",
+    "price": "420",
+    "description": "Solana's Filthiest Pups on the block - 'Ready to make an entrance, so back on up. Cause you know we're bout to rip it up'",
+    "image_url": "https://gateway.pinata.cloud/ipfs/QmSPsdt6mBUjza77kiTLs35NNyx3k7NPyyhKcMScy1kvnw",
+    "filename": "T1.png",
+    "hash": "QmSPsdt6mBUjza77kiTLs35NNyx3k7NPyyhKcMScy1kvnw"
+  },
+  {
+      "id": 2,
+      "name": "Sol Team Six #---",
+      "price": "875",
+      "description": "314 uniquely generated operators commissioned to serve and protect the #solana ecosystem at all cost.",
+      "image_url": "https://gateway.pinata.cloud/ipfs/QmNWBJmfr2m2wWeY7u9azqnm7CqtHnDmLVv7nMMjXYEQ18",
+      "filename": "T2.png",
+      "hash": "QmNWBJmfr2m2wWeY7u9azqnm7CqtHnDmLVv7nMMjXYEQ18"
+    },
+    {
+      "id": 3,
+      "name": "Lady Richards #---",
+      "price": "1750",
+      "description": "The Best Damn Asses in the Metaverse! All Donkey Richards NFT owners receive discounts on IRL merchandise from www.donkeyrichard.com ",
+      "image_url": "https://gateway.pinata.cloud/ipfs/QmNbeRmbGHL9b2q9kMYoQSB766nLimmFx3MSDDB7KwsdW8",
+      "filename": "T3.png",
+      "hash": "QmNbeRmbGHL9b2q9kMYoQSB766nLimmFx3MSDDB7KwsdW8"
+    },
+    {
+      "id": 4,
+      "name": "RM WL Token",
+      "price": "1000",
+      "description": "Right Meow WL Token",
+      "image_url": "../RMWL.gif",
+      "filename": "RMWL.gif",
+      "hash": "QmcmHxpq3TmNRSwEZZdUY4hfRyVbMNqQoo91GDmziWeP3C"
+    }
+]

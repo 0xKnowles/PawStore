@@ -2,7 +2,6 @@ import React, { useEffect, useState, Component } from 'react';
 import Product from "../components/Product";
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import HeadComponent from '../components/Head';
 import Typist from 'react-typist';
 import CreateProduct from "../components/CreateProduct";
 
@@ -14,7 +13,8 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
+  const isOwner = ( publicKey ? publicKey.toString() === "5Mv3rEThkAGENfeUZtyXS6fvwa3SNKFUkfRAxrgWRo5m" : false );
+  const isDev = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
 
@@ -63,6 +63,11 @@ const App = () => {
               {creating ? "Close" : "Create Product"}
             </button>
         )}
+        {isDev && (
+            <button className="create-product-button" onClick={() => setCreating(!creating)}>
+              {creating ? "Close" : "Admin Panel"}
+            </button>
+        )}
         
         
           <p className="sub-text">You have "💸" $PAWS</p>
@@ -70,7 +75,7 @@ const App = () => {
         </header>
 
         <main>
-        {creating && <CreateProduct />}
+          {creating && <CreateProduct />}
           {publicKey ? renderItemBuyContainer() : renderNotConnectedContainer()}
           
         </main>

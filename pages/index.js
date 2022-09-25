@@ -44,6 +44,7 @@ const App = () => {
   );
 
   return (
+
     <div className="App">
       <div className="container">
         <header className="header-container">
@@ -51,6 +52,10 @@ const App = () => {
         <meta name='description' content='The Tower' />
         
 
+        
+        </header>
+
+        <main>
         <Typist>
         <h1>Welcome to the Right Meow Store</h1>
         <Typist.Backspace count={31} delay={2000} />
@@ -72,15 +77,14 @@ const App = () => {
         
           <p className="sub-text">You have "💸" $PAWS</p>
           <WalletMultiButton className="cta-button connect-wallet-button" />
-        </header>
 
-        <main>
           {creating && <CreateProduct />}
           {publicKey ? renderItemBuyContainer() : renderNotConnectedContainer()}
-          
         </main>
 
-        <div className="footer-container">
+        
+      </div>
+      <div className="footer-container">
           <img alt="Twitter Logo" className="twitter-logo" src="twitter-logo.svg" />
           <a
             className="footer-text"
@@ -97,8 +101,8 @@ const App = () => {
             rel="noreferrer"
           >{` Join Discord`}</a>
         </div>
-      </div>
     </div>
+
   );
 };
 

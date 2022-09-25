@@ -29,7 +29,7 @@
   {
     "id": 4,
     "name": "RM WL Token",
-    "price": "1000",
+    "price": "10",
     "description": "Right Meow WL Token",
     "image_url": "../RMWL.gif",
     "filename": "RMWL.gif",
@@ -37,58 +37,23 @@
   },
   {
     "id": 5,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
+    "name": "Whirlie #1",
+    "price": "420",
+    "image_url": "https://images-cdn.exchange.art/non_live_data/creator_data/BcMM1ztylSTxupq2Hva0SldpPmL2/brands/Hellshade/series/Whirlies/avatar-3b76384d-6d69-4a6e-8564-f69f67d7a49e.false?auto=avifwebp",
+    "description": "Whirlie #1 "
   },
   {
     "id": 6,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
+    "name": "Meow Wrist Band",
+    "price": "750",
+    "image_url": "../band.png",
+    "description": "Right Meow donation band"
   },
   {
     "id": 7,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
-  },
-  {
-    "id": 8,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
-  },
-  {
-    "id": 9,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
-  },
-  {
-    "id": 10,
-    "name": "",
-    "price": "",
-    "image_url": "",
-    "description": ""
-  },
-  {
-    "id": 11,
-    "name": "qwqw",
-    "price": "231",
-    "image_url": "",
-    "description": "csdfsdf"
-  },
-  {
-    "id": 12,
-    "name": "qwqw",
-    "price": "231",
-    "image_url": "",
-    "description": "csdfsdf"
+    "name": " Crypto Heroes #1142",
+    "price": "213",
+    "image_url": "https://bafybeif3hebgsif5bohv2cpmvwm2fpv3uxa55roeyz77yw27ljvy3kxvp4.ipfs.dweb.link/?ext=png",
+    "description": "Crypto Hero NFT"
   }
 ]

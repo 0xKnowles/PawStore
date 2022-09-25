@@ -31,7 +31,7 @@ const App = () => {
 
   const renderNotConnectedContainer = () => (
     <div className="button-container">
-      <WalletMultiButton className="cta-button connect-wallet-button" />
+      
     </div>
   );
   

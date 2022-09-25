@@ -14,7 +14,7 @@ import BigNumber from "bignumber.js";
 import products from "./products.json";
 
 const usdcAddress = new PublicKey(
-  "5y6LK5KTxzy8iSJtjmWmjEF6zo99a5tQjuDHmgXL3Ezj"
+  "pawf143a1wwW1gMDmQkvKraohiVxsbNuXu1U7AM9dZd"
 );
 const sellerAddress = "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8";
 const sellerPublicKey = new PublicKey(sellerAddress);
@@ -46,7 +46,7 @@ const createTransaction = async (req, res) => {
 
     const bigAmount = BigNumber(itemPrice);
     const buyerPublicKey = new PublicKey(buyer);
-    const network = WalletAdapterNetwork.Devnet;
+    const network = WalletAdapterNetwork.Mainnet;
     const endpoint = clusterApiUrl(network);
     const connection = new Connection(endpoint);
     const buyerUsdcAddress = await getAssociatedTokenAddress(

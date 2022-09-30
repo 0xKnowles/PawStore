@@ -4,6 +4,7 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import Typist from 'react-typist';
 import CreateProduct from "../components/CreateProduct";
+import Badge from 'react-bootstrap/Badge';
 
 // Constants
 const TWITTER_HANDLE = 'RightMeowNfts';
@@ -13,7 +14,7 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === "5Mv3rEThkAGENfeUZtyXS6fvwa3SNKFUkfRAxrgWRo5m" : false );
+  const isOwner = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
   const isDev = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
@@ -57,11 +58,11 @@ const App = () => {
 
         <main>
         <Typist>
-        <h1>Welcome to the Right Meow Store</h1>
-        <Typist.Backspace count={31} delay={2000} />
         <h1>🛒 RM STORE 🛒</h1>
         Spend your $PAWS here 🐾
         </Typist>
+        {'\n'}
+
 
         {isOwner && (
             <button className="create-product-button" onClick={() => setCreating(!creating)}>
@@ -75,7 +76,11 @@ const App = () => {
         )}
         
         
-          <p className="sub-text">You have "💸" $PAWS</p>
+          
+
+
+
+
           <WalletMultiButton className="cta-button connect-wallet-button" />
 
           {creating && <CreateProduct />}

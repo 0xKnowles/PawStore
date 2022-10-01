@@ -18,6 +18,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import "../styles/globals.css";
 import "../styles/App.css";
 
+
 const App = ({ Component, pageProps }) => {
   const network = WalletAdapterNetwork.Mainnet;
 
@@ -27,6 +28,8 @@ const App = ({ Component, pageProps }) => {
     () => [new PhantomWalletAdapter(), new SolflareWalletAdapter({ network })],
     [network]
   );
+
+
 
   return (
     <ConnectionProvider endpoint={endpoint}>

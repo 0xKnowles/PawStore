@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { create } from "ipfs-http-client";
 import styles from "../styles/CreateProduct.module.css";
 
+
 const client = create("https://ipfs.infura.io:5001/api/v0");
 
 const CreateProduct = () => {
@@ -51,6 +52,7 @@ const CreateProduct = () => {
   };
 
   return (
+
     <div className={styles.background_blur}>
       <div className={styles.create_product_container}>
         <div className={styles.create_product_form}>
@@ -79,7 +81,7 @@ const CreateProduct = () => {
               <input
                 className={styles.input}
                 type="text"
-                placeholder="12.50 PAWS"
+                placeholder="125 PAWS"
                 onChange={(e) => {
                   setNewProduct({ ...newProduct, price: e.target.value });
                 }}

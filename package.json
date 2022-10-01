@@ -21,6 +21,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-firebase/database": "^0.3.11",
     "@solana/pay": "^0.2.0",
     "@solana/wallet-adapter-base": "^0.9.4",
     "@solana/wallet-adapter-react": "^0.15.3",
@@ -30,6 +31,7 @@
     "bignumber.js": "^9.0.2",
     "bootstrap": "^5.2.1",
     "crypto-js": "^4.1.1",
+    "firebase": "^9.10.0",
     "ipfs-core": "^0.14.3",
     "ipfs-http-client": "^56.0.3",
     "next": "^12.1.0",

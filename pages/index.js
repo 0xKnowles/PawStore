@@ -4,7 +4,9 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import Typist from 'react-typist';
 import CreateProduct from "../components/CreateProduct";
-import Badge from 'react-bootstrap/Badge';
+
+
+
 
 // Constants
 const TWITTER_HANDLE = 'RightMeowNfts';
@@ -14,8 +16,8 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
-  const isDev = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
+  const isOwner = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_OWNER_PUBLIC_KEY : false );
+  const isDev = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_DEV_PUBLIC_KEY : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
 

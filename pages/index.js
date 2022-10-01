@@ -16,8 +16,8 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_OWNER_PUBLIC_KEY : false );
-  const isDev = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_DEV_PUBLIC_KEY : false );
+  const isOwner = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
+  const isDev = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
 

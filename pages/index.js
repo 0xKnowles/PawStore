@@ -4,8 +4,26 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import Typist from 'react-typist';
 import CreateProduct from "../components/CreateProduct";
+import {db} from '../components/FbConfig'
+import {
+  collection,
+  getDocs,
+} from 'firebase/firestore';
 
+const colRef = collection(db, 'ForSale')
+let prods = []
 
+getDocs(colRef)
+  .then((snapshot) => {
+    
+    snapshot.docs.forEach(doc => {
+      prods.push({ ...doc.data(), id: doc.id})
+    })
+    console.log(prods)
+  })
+  .catch(err => {
+    console.log(err.message)
+  })
 
 
 // Constants
@@ -21,13 +39,14 @@ const App = () => {
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
 
+
+  
   useEffect(() => {
     if (publicKey) {
       fetch(`/api/fetchProducts`)
         .then(response => response.json())
         .then(data => {
           setProducts(data);
-          console.log("Products", data);
         });
     }
   }, [publicKey]);
@@ -40,7 +59,7 @@ const App = () => {
   
   const renderItemBuyContainer = () => (
     <div className="products-container">
-      {products.map((product) => (
+      {prods.map((product) => (
         <Product key={product.id} product={product} />
       ))}
     </div>

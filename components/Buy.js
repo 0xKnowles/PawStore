@@ -5,6 +5,13 @@ import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { InfinitySpin } from "react-loader-spinner";
 import IPFSDownload from "./IpfsDownload";
 import { addOrder, hasPurchased, fetchItem } from "../lib/api";
+import {db} from '../components/FbConfig'
+import {
+  query,
+  collection,
+  addDoc,
+} from 'firebase/firestore';
+
 
 const STATUS = {
   Initial: "Initial",
@@ -19,6 +26,28 @@ export default function Buy({ itemID }) {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(STATUS.Initial); // Tracking transaction status
+
+  //Firebase
+  const [Orders, newOrder] = useState([]);
+  const [input, setInput] = useState('');
+
+  const createOrder = async (_e) => {
+    await addDoc(collection(db, 'Orders'), {
+      orderID: orderID.toString(),
+      buyer: publicKey.toString(),
+      itemID: itemID,
+    });
+    setInput('');
+  };
+
+
+  useEffect(() => {
+    const q = query(collection(db, 'Orders'));
+    
+  }, []);
+
+
+
 
   const order = useMemo(
     () => ({
@@ -84,6 +113,7 @@ export default function Buy({ itemID }) {
             setStatus(STATUS.Paid);
             setLoading(false);
             addOrder(order);
+            createOrder();
             alert("Thank you for your purchase!");
           }
         } catch (e) {
@@ -130,7 +160,9 @@ export default function Buy({ itemID }) {
         <button
           disabled={loading}
           className="buy-button"
-          onClick={processTransaction}
+          onClick={() => {
+            processTransaction();
+          }}
         >
           Buy now 🏆
         </button>

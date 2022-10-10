@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { create } from "ipfs-http-client";
 import styles from "../styles/CreateProduct.module.css";
-
+import {db} from '../components/FbConfig'
+import {
+  query,
+  collection,
+  addDoc,
+} from 'firebase/firestore';
 
 const client = create("https://ipfs.infura.io:5001/api/v0");
+
 
 const CreateProduct = () => {
   const [newProduct, setNewProduct] = useState({
@@ -51,6 +57,32 @@ const CreateProduct = () => {
     }
   };
 
+//Firebase
+const [Orders, newOrder] = useState([]);
+const [input, setInput] = useState('');
+const [PName, setPName] = useState();
+const [TCost, setTCost] = useState();
+const [PDesc, setPDesc] = useState();
+const [IURL, setIURL] = useState();
+
+
+const createItem = async (_e) => {
+  await addDoc(collection(db, 'ForSale'), {
+    PName,
+    TCost,
+    PDesc,
+    IURL,
+  });
+  setInput('');
+};
+
+
+useEffect(() => {
+  const q = query(collection(db, 'ForSale'));
+  
+}, []);
+
+
   return (
 
     <div className={styles.background_blur}>
@@ -76,14 +108,16 @@ const CreateProduct = () => {
                 placeholder="Product Name"
                 onChange={(e) => {
                   setNewProduct({ ...newProduct, name: e.target.value });
+                  setPName(e.target.value);
                 }}
               />
               <input
                 className={styles.input}
-                type="text"
+                type="number"
                 placeholder="125 PAWS"
                 onChange={(e) => {
-                  setNewProduct({ ...newProduct, price: e.target.value });
+                  setNewProduct({ ...newProduct, price: e.target.value }),
+                  setTCost(e.target.value);
                 }}
               />
             </div>
@@ -95,6 +129,7 @@ const CreateProduct = () => {
                 placeholder="Image URL ex: https://i.imgur.com/RMstore72VD4v.png"
                 onChange={(e) => {
                   setNewProduct({ ...newProduct, image_url: e.target.value });
+                  setIURL(e.target.value);
                 }}
               />
             </div>
@@ -102,7 +137,8 @@ const CreateProduct = () => {
               className={styles.text_area}
               placeholder="Description of product..."
               onChange={(e) => {
-                setNewProduct({ ...newProduct, description: e.target.value });
+                setNewProduct({ ...newProduct, description: e.target.value }),
+                setPDesc(e.target.value);
               }}
             />
 
@@ -110,6 +146,7 @@ const CreateProduct = () => {
               className={styles.button}
               onClick={() => {
                 createProduct();
+                createItem();
               }}
               disabled={uploading}
             >

@@ -55,5 +55,124 @@
     "price": "213",
     "image_url": "https://bafybeif3hebgsif5bohv2cpmvwm2fpv3uxa55roeyz77yw27ljvy3kxvp4.ipfs.dweb.link/?ext=png",
     "description": "Crypto Hero NFT"
+  },
+  {
+    "id": 8,
+    "name": "Tesat",
+    "price": "12",
+    "image_url": "fsfjhsjf",
+    "description": "sjkhsjdh"
+  },
+  {
+    "id": 9,
+    "name": "Filthy Pup Test DB",
+    "price": "10",
+    "image_url": "https://gateway.pinata.cloud/ipfs/QmSPsdt6mBUjza77kiTLs35NNyx3k7NPyyhKcMScy1kvnw",
+    "description": "tester"
+  },
+  {
+    "id": 10,
+    "name": "",
+    "price": "",
+    "image_url": "",
+    "description": ""
+  },
+  {
+    "id": 11,
+    "name": "dfdf",
+    "price": "12",
+    "image_url": "sdfsdf",
+    "description": "sdfsdf"
+  },
+  {
+    "id": 12,
+    "name": "sdsd",
+    "price": "12",
+    "image_url": "ffs",
+    "description": "sfsff"
+  },
+  {
+    "id": 13,
+    "name": "Test Coin",
+    "price": "11",
+    "image_url": "https://c8.alamy.com/zooms/9/fc08ca1bc81b4c6bbdad7af18bb47ab3/er0dm7.jpg",
+    "description": "This is a test"
+  },
+  {
+    "id": 14,
+    "name": "Coin 2 ",
+    "price": "2",
+    "image_url": "https://c8.alamy.com/zooms/9/fc08ca1bc81b4c6bbdad7af18bb47ab3/er0dm7.jpg",
+    "description": "2 Test"
+  },
+  {
+    "id": 15,
+    "name": "Whirlie #1",
+    "price": "1200",
+    "image_url": "https://images-cdn.exchange.art/non_live_data/creator_data/BcMM1ztylSTxupq2Hva0SldpPmL2/brands/Hellshade/series/Whirlies/avatar-3b76384d-6d69-4a6e-8564-f69f67d7a49e.false?auto=avifwebp",
+    "description": "Whirlie #1 by @Hellshade"
+  },
+  {
+    "id": 16,
+    "name": "",
+    "price": "",
+    "image_url": "",
+    "description": ""
+  },
+  {
+    "id": 17,
+    "name": "",
+    "price": "",
+    "image_url": "",
+    "description": ""
+  },
+  {
+    "id": 18,
+    "name": "Crypto Heroes #180",
+    "price": "300",
+    "image_url": "https://api.phantom.app/image-proxy/?image=https%3A%2F%2Fbafybeicychcc5fhrqjqt6xfd2imtnq6rzqc3imaecsktow33d3v3orexha.ipfs.dweb.link%3Fext%3Dpng&fit=cover&width=154&height=154",
+    "description": "Crypto Hero, stake for $HERO"
+  },
+  {
+    "id": 19,
+    "name": "Crypto Heroes #868",
+    "price": "300",
+    "image_url": "https://bafybeigly6pcks4wdykhq7qn4rf3p6ctjn6em3ds7vqyshzfooaw2kvypq.ipfs.dweb.link/?ext=png",
+    "description": "Crypto Hero, steak for $HERO"
+  },
+  {
+    "id": 20,
+    "name": " Chill Elephant #995",
+    "price": "750",
+    "image_url": "https://xthr5lxykay3jkhlqny3vjmjkqrqlvrexmpj2koujmjjgg5ecwkq.arweave.net/vM8ervhQMbSo64NxuqWJVCMF1iS7Hp0p1EsSkxukFZU?ext=png",
+    "description": "a collection focused on bringing our community members value through exclusive airdrops, game play utility, and merchandise to elephant holders"
+  },
+  {
+    "id": 21,
+    "name": "Filthy Pup #4459",
+    "price": "400",
+    "image_url": "https://vltmnf5dfipspp77q5zgk55zdydahajvamkf7erybtixgpa75qaa.arweave.net/qubGl6MqHye__4dyZXe5HgYDgTUDFF-SOAzRczwf7AA?ext=png",
+    "description": "Pup Filthy aims to build upon and strengthen the world’s diverse community of art lovers while supporting man’s best friend."
+  },
+  {
+    "id": 22,
+    "name": "Filthy Pup #1103",
+    "price": "400",
+    "image_url": "https://qhjvs6zv3mp6bpraebs7cee6trwi73syclxlwejz3dwagiojuaea.arweave.net/gdNZezXbH-C-ICBl8RCenGyP7lgS7rsROdjsAyHJoAg?ext=png",
+    "description": "Pup Filthy aims to build upon and strengthen the world’s diverse community of art lovers while supporting man’s best friend."
+  },
+  {
+    "id": 23,
+    "name": "One in a Minion ",
+    "price": "1000",
+    "image_url": "https://xewmcxhsgvnp5iumju3reirc7rg6nmnskutcoxxft64rl62i26fa.arweave.net/uSzBXPI1Wv6ijE03EiIi_E3msbJVJide5Z-5FftI14o?ext=JPG",
+    "description": "\"One in a Minion\", Edition #3  by @SueAnnaJoe"
+  },
+  {
+    "id": 24,
+    "name": "solTurtle #614 ",
+    "price": "400",
+    "image_url": "https://iuwjuvstbzsdwrztq2jg53mjpal3c76r7zxazwn3rw376ncrqdza.arweave.net/RSyaVlMOZDtHM4aSbu2JeBexf9H-bgzZu423_zRRgPI?ext=png",
+    "description": "4,444 algorithmically generated unique turtles"
   }
 ]

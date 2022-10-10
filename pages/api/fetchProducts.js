@@ -1,15 +1,19 @@
-import products from "./products.json";
+import { useState } from "react"
+import {db} from './FbConfig'
+import {
+  collection,
+  getDocs,
+} from 'firebase/firestore';
+
+const colRef = collection(db, 'ForSale')
+
 
 export default function handler(req, res) {
+
   // If get request
   if (req.method === "GET") {
-    // Create a copy of products without the hashes and filenames
-    const productsNoHashes = products.map((product) => {
-      const { hash, filename, ...rest } = product;
-      return rest;
-    });
 
-    res.status(200).json(productsNoHashes);
+    res.status(200).json(colRef);
   } else {
     res.status(405).send(`Method ${req.method} not allowed`);
   }

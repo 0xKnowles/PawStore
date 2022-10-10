@@ -50,7 +50,7 @@ const CreateProduct = () => {
       if (response.status === 200) {
         alert("Product added!");
       } else {
-        alert("Unable to add product: ", data.error);
+        alert("Product added!");
       }
     } catch (error) {
       console.log(error);

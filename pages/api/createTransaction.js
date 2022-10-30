@@ -13,7 +13,8 @@ import {
 import BigNumber from "bignumber.js";
 import products from "./products.json";
 
-const usdcAddress = new PublicKey(
+
+const pawAddress = new PublicKey(
   "pawf143a1wwW1gMDmQkvKraohiVxsbNuXu1U7AM9dZd"
 );
 const sellerAddress = "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8";
@@ -36,7 +37,7 @@ const createTransaction = async (req, res) => {
       });
     }
 
-    const itemPrice = products.find((item) => item.id === itemID).price;
+    const itemPrice = products.find((item) => item.id === itemID).TCost;
 
     if (!itemPrice) {
       return res.status(404).json({
@@ -49,17 +50,17 @@ const createTransaction = async (req, res) => {
     const network = WalletAdapterNetwork.Mainnet;
     const endpoint = clusterApiUrl(network);
     const connection = new Connection(endpoint);
-    const buyerUsdcAddress = await getAssociatedTokenAddress(
-      usdcAddress,
+    const buyerPawAddress = await getAssociatedTokenAddress(
+      pawAddress,
       buyerPublicKey
     );
     const shopUsdcAddress = await getAssociatedTokenAddress(
-      usdcAddress,
+      pawAddress,
       sellerPublicKey
     );
     const { blockhash } = await connection.getLatestBlockhash("finalized");
 
-    const usdcMint = await getMint(connection, usdcAddress);
+    const usdcMint = await getMint(connection, pawAddress);
 
     const tx = new Transaction({
       recentBlockhash: blockhash,
@@ -67,8 +68,8 @@ const createTransaction = async (req, res) => {
     });
 
     const transferInstruction = createTransferCheckedInstruction(
-      buyerUsdcAddress,
-      usdcAddress,
+      buyerPawAddress,
+      pawAddress,
       shopUsdcAddress,
       buyerPublicKey,
       bigAmount.toNumber() * 10 ** (await usdcMint).decimals,

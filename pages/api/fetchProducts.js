@@ -1,4 +1,5 @@
 import { useState } from "react"
+import products from "./products.json";
 import {db} from './FbConfig'
 import {
   collection,

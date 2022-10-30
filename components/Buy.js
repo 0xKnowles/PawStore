@@ -26,11 +26,9 @@ export default function Buy({ itemID }) {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(STATUS.Initial); // Tracking transaction status
-
-  //Firebase
-  const [Orders, newOrder] = useState([]);
   const [input, setInput] = useState('');
-
+  const [Orders, newOrder] = useState([]);
+  
   const createOrder = async (_e) => {
     await addDoc(collection(db, 'Orders'), {
       orderID: orderID.toString(),
@@ -75,7 +73,7 @@ export default function Buy({ itemID }) {
     try {
       const txHash = await sendTransaction(tx, connection);
       console.log(
-        `Transaction sent: https://solscan.io/tx/${txHash}?cluster=devnet`
+        `Transaction sent: https://solscan.io/tx/${txHash}?cluster=mainnet`
       );
       setStatus(STATUS.Submitted);
     } catch (error) {
@@ -114,6 +112,8 @@ export default function Buy({ itemID }) {
             setLoading(false);
             addOrder(order);
             createOrder();
+            
+            
             alert("Thank you for your purchase!");
           }
         } catch (e) {
@@ -160,9 +160,7 @@ export default function Buy({ itemID }) {
         <button
           disabled={loading}
           className="buy-button"
-          onClick={() => {
-            processTransaction();
-          }}
+          onClick={processTransaction}
         >
           Buy now 🏆
         </button>

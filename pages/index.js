@@ -34,8 +34,8 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
-  const isDev = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
+  const isOwner = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
+  const isDev = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
 
@@ -58,6 +58,9 @@ const App = () => {
   );
   
   const renderItemBuyContainer = () => (
+
+    
+
     <div className="products-container">
       {prods.map((product) => (
         <Product key={product.id} product={product} />

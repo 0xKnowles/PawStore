@@ -17,7 +17,7 @@ import products from "./products.json";
 const pawAddress = new PublicKey(
   "pawf143a1wwW1gMDmQkvKraohiVxsbNuXu1U7AM9dZd"
 );
-const sellerAddress = "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8";
+const sellerAddress = "8VUizw2LZZYqbvGTdEovZbRoPituhavGzAwKd8CtNwbv";
 const sellerPublicKey = new PublicKey(sellerAddress);
 
 const createTransaction = async (req, res) => {

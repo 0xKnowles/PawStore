@@ -9,6 +9,7 @@ import {
   collection,
   getDocs,
 } from 'firebase/firestore';
+import Card from 'react-bootstrap/Card';
 
 const colRef = collection(db, 'ForSale')
 let prods = []
@@ -34,11 +35,12 @@ const DISCORD_LINK = `https://discord.gg/${DISCORD_HANDLE}`;
 
 const App = () => {
   const { publicKey } = useWallet();
-  const isOwner = ( publicKey ? publicKey.toString() === "3mt3noYwqC8zV818sUWj7ZMnrAUAdDr64Tt1BYuRHRGM" : false );
-  const isDev = ( publicKey ? publicKey.toString() === "734mCGGUsxLVPTAKBLPMXeGozacR4SDhrspA4S197Zq8" : false );
+  const isOwner = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_OWNER_PUBLIC_KEY : false );
+  const isDev = ( publicKey ? publicKey.toString() === process.env.NEXT_PUBLIC_DEV_PUBLIC_KEY : false );
   const [creating, setCreating] = useState(false);
   const [products, setProducts] = useState([]);
-
+  
+  
 
   
   useEffect(() => {
@@ -56,7 +58,6 @@ const App = () => {
       
     </div>
   );
-  
   const renderItemBuyContainer = () => (
 
     
@@ -81,12 +82,18 @@ const App = () => {
         </header>
 
         <main>
+
+    <Card class="card border-primary mb-3" style={{ width: '18rem'}}>
+      <Card.Img variant="top" height="100" src="https://gdfyrj7mw3g37s4zqolst5g7qsletwugtth5ot5yfcud57wqdlda.arweave.net/MMuIp-y2zb_LmYOXKfTfhJZJ2oacz9dPuCioPv7QGsY?ext=png" />
+    </Card>
+
         <Typist>
         <h1>🛒 RM STORE 🛒</h1>
         Spend your $PAWS here 🐾
         </Typist>
         {'\n'}
 
+        
 
         {isOwner && (
             <button className="create-product-button" onClick={() => setCreating(!creating)}>
@@ -109,6 +116,7 @@ const App = () => {
 
           {creating && <CreateProduct />}
           {publicKey ? renderItemBuyContainer() : renderNotConnectedContainer()}
+          
         </main>
 
         

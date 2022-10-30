@@ -124,7 +124,7 @@ export default function Buy({ itemID }) {
         } finally {
           setLoading(false);
         }
-      }, 1000);
+      }, 10000);
       return () => {
         clearInterval(interval);
       };
